@@ -1,0 +1,34 @@
+
+  <node
+  pkg="rosserial_python"
+  type="serial_node.py"
+  name="serial_node"
+  >
+  <param name="port"              type="string"               value="/dev/ttyACM0"/>
+  <param name="baud"              type="int"                  value="57600"/>
+  </node >
+
+rqt_graph
+
+roslaunch main test.launch
+
+roslaunch main main.launch
+
+
+roslaunch main rsp_launcher.launch
+rostopic pub -1 rsp_game std_msgs/String "data: start game"
+
+
+rostopic pub init_game std_msgs/String "data: start game"
+rostopic pub -1 rsp_game std_msgs/String "data: start game"
+
+
+rostopic pub -1 /speech_to_text std_msgs/String "data: start play"
+
+
+rostopic pub -1 /text_to_speech std_msgs/String "data: start play"
+
+
+rostopic pub -1 /hand_detector_ctrl std_msgs/String "data: True"
+
+rostopic pub -1 /hand_detector_ctrl std_msgs/String "'True'"

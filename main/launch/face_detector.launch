@@ -1,0 +1,14 @@
+<launch>
+<node
+    pkg="main"
+    type="face_detector.py"
+    name="face_detector"
+    output="screen"
+/>
+<node
+    pkg="main"
+    type="webcam_stream.py"
+    name="webcam_stream"
+    output="screen"
+/>
+</launch>

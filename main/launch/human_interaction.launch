@@ -1,0 +1,29 @@
+<launch>
+<node
+    pkg="main"
+    type="face_detector.py"
+    name="face_detector"
+    output="screen"
+/>
+<node
+    pkg="main"
+    type="webcam_stream.py"
+    name="webcam_stream"
+    output="screen"
+/>
+
+<node
+    pkg="main"
+    type="human_interaction.py"
+    name="human_interaction"
+    output="screen"
+/>
+</launch>
+<!--
+roslaunch main human_interaction.launch
+
+rostopic pub -1 /PIR std_msgs/String "'True'"
+
+rostopic pub -1 /hand_detector_ctrl std_msgs/String "'False'"
+
+-->

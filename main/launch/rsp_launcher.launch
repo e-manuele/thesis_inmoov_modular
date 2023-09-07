@@ -1,0 +1,41 @@
+<launch>
+
+<node
+    pkg="main"
+    type="webcam_stream.py"
+    name="webcam_stream"
+    output="screen"
+/>
+
+<node
+    pkg="main"
+    type="hand_detector.py"
+    name="hand_detector"
+    output="screen"
+/>
+<node
+    pkg="main"
+    type="text_to_speech.py"
+    name="text_to_speech"
+    output="screen"
+/>
+<node
+    pkg="main"
+    type="rsp_game.py"
+    name="rsp_game"
+    output="screen"
+/>
+<node
+  pkg="rosserial_python"
+  type="serial_node.py"
+  name="serial_node"
+  >
+  <param name="port"              type="string"               value="/dev/ttyACM0"/>
+  <param name="baud"              type="int"                  value="57600"/>
+  </node >
+</launch>
+<!--
+roslaunch main rsp_launcher.launch
+
+rostopic pub -1 rsp_game std_msgs/String "data: start game"
+-->

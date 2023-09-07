@@ -1,0 +1,17 @@
+<launch>
+<node
+    pkg="main"
+    type="webcam_pub.py"
+    name="webcam_pub"
+    output="screen"
+  />
+<node
+    pkg="main"
+    type="hand_detector.py"
+    name="hand_detector"
+    output="screen"
+  />
+
+
+
+</launch>

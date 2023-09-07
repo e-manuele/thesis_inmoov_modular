@@ -1,0 +1,60 @@
+<launch>
+  <node
+  pkg="rosserial_python"
+  type="serial_node.py"
+  name="serial_node"
+  >
+  <param name="port"              type="string"               value="/dev/ttyACM0"/>
+  <param name="baud"              type="int"                  value="57600"/>
+  </node >
+</launch>
+
+<!--
+ls /dev/tty*
+
+roslaunch main arduino.launch
+
+
+
+rostopic pub  -1 /hand_pos std_msgs/UInt16MultiArray "layout:
+  dim:
+  - label: ''
+    size: 5
+    stride: 0
+  data_offset: 0
+data:
+- 180
+- 180
+- 180
+- 180
+- 180
+"
+
+rostopic pub  -1 /hand_pos std_msgs/UInt16MultiArray "layout:
+  dim:
+  - label: ''
+    size: 5
+    stride: 0
+  data_offset: 0
+data:
+- 0
+- 0
+- 0
+- 0
+- 0
+"
+rostopic pub -1 /hand_pos std_msgs/UInt16MultiArray "layout:
+  dim:
+  - label: ''
+    size: 5
+    stride: 0
+  data_offset: 0
+data:
+- 0
+- 0
+- 180
+- 180
+- 0
+"
+
+ / -->

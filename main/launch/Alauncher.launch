@@ -1,0 +1,20 @@
+<launch>
+<!--node
+    pkg="main"
+    type="A_PUBLISHER.py"
+    name="A_PUBLISHER"
+    output="screen"
+  / -->
+<!--node
+    pkg="main"
+    type="A_SUBSCRIBER.py"
+    name="A_SUBSCRIBER"
+    output="screen"
+  / -->
+<node
+    pkg="main"
+    type="A_SUBSCRIBER_ACTIVATOR.py"
+    name="A_SUBSCRIBER_ACTIVATOR"
+    output="screen"
+  />
+</launch>

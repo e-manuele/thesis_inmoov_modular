@@ -1,0 +1,39 @@
+<launch>
+<node
+    pkg="main"
+    type="main.py"
+    name="main"
+    output="screen"
+/>
+
+<node
+    pkg="main"
+    type="wikipedia_search.py"
+    name="wikipedia_search"
+    output="screen"
+/>
+<node
+    pkg="main"
+    type="hand_detector.py"
+    name="hand_detector"
+    output="screen"
+/>
+<node
+    pkg="main"
+    type="text_to_speech.py"
+    name="text_to_speech"
+    output="screen"
+/>
+<node
+    pkg="main"
+    type="rsp_game.py"
+    name="rsp_game"
+    output="screen"
+/>
+</launch>
+<!--node
+    pkg="main"
+    type="speech_to_text.py"
+    name="speech_to_text"
+    output="screen"
+  / -->

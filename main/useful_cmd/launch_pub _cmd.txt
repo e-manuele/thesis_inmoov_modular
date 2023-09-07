@@ -1,0 +1,84 @@
+
+
+
+roslaunch cv_base Inmoov_base_sensors.launch
+
+roslaunch cv_base Inmoov_red_obj_track.launch
+
+
+roslaunch cv_base Inmoov_servo_test.launch
+roslaunch cv_base RSP_easy.launch
+roslaunch cv_base webcam_test.launch
+
+rostopic pub /hand_pos std_msgs/UInt16MultiArray "layout:
+  dim:
+  - label: ''
+    size: 4
+    stride: 0
+  data_offset: 0
+data:
+- 180 
+- 180
+- 180
+- 180
+- 180
+"
+
+rostopic pub /hand_pos std_msgs/UInt16MultiArray "layout:
+  dim:
+  - label: ''
+    size: 4
+    stride: 0
+  data_offset: 0
+data:
+- 0 
+- 0
+- 0
+- 0
+- 0
+"
+
+rostopic pub /hand_pos std_msgs/UInt16MultiArray "layout:
+  dim:
+  - label: ''
+    size: 4
+    stride: 0
+  data_offset: 0
+data:
+- 90 
+- 90
+- 90
+- 90
+- 90
+"
+
+rosrun rosserial_python serial_node.py _port:=/dev/ttyACM0 _baud:=57600
+
+rostopic pub /hand_pos std_msgs/UInt16MultiArray "layout:
+  dim:
+  - label: ''
+    size: 4
+    stride: 0
+  data_offset: 0
+data:
+- 0 
+- 0
+- 180
+- 180
+- 0
+"
+ '''
+  <node
+  pkg="main"
+  type="serial_node.py"
+  name="serial_node"
+  >
+  <param name="port"              type="string"               value="/dev/ttyACM0"/>
+  <param name="baud"              type="int"                  value="57600"/>
+  </node >
+'''
+
+roslaunch cv_base RSP_easy.launch
+
+rostopic pub init_game std_msgs/String "data: start game"
+rostopic pub -1 init_game std_msgs/String "data: start game"
