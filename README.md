@@ -1,2 +1,3 @@
 # thesis_inmoov_modular
-A bar programmed version of  modular humanoid OS.
+A bad programmed version of  modular humanoid OS.
+Barely working..
